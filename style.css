@@ -229,13 +229,14 @@ span {
 }
 @media (max-width: 769px) {
 	html {
-		font-size: 62.5%;
+		font-size: 55%;
 	}
 	body {
 		overflow: hidden;
 		height: 100vh;
 	}
 	.container {
+		overflow: hidden;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -244,5 +245,8 @@ span {
 	}
 	.player {
 		width: 25%;
+	}
+	.return-score {
+		line-height: 2em;
 	}
 }
