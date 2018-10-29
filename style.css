@@ -4,7 +4,7 @@
 	padding: 0;
 	user-select: none;
 	color: #ccff00;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Fahkwang', sans-serif;
 }
 html {
 	font-size: 62.5%;
@@ -89,9 +89,8 @@ body {
 	height: 100%;
 	width: 100%;
 	background-color: black;
-	opacity: .6;
+	opacity: .4;
 	transition: .6s;
-	border-right: 1px solid black;
 	z-index: 2;
 }
 .player-active .cover {
