@@ -185,6 +185,7 @@ body {
 	height: 35%;
 	border-bottom: 1px solid black;
 	font-size: 2.2em;
+	line-height: 1em;
 }
 .scores {
 	height: 65%;
@@ -202,6 +203,7 @@ span {
 .next {
 	position: relative;
 	border: 1px solid transparent;
+	line-height: 1em;
 }
 .next.grey {
 	border-color: #ccff00;
@@ -229,11 +231,11 @@ span {
 	html {
 		font-size: 50%;
 	}
-	.return-score {
+	/*.return-score {
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-	}
+	}*/
 }
 @media (max-width: 769px) {
 	html {
