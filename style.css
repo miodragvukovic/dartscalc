@@ -250,7 +250,7 @@ span {
 		line-height: 1.2em;
 	}
 }
-@media (max-height: 500px) {
+@media (max-height: 420px) {
 	html {
 		font-size: 50%;
 	}
@@ -268,7 +268,8 @@ span {
 	.multiplier {
 		justify-content: flex-end;
 	}
-	.return-score {
-		height: 45%;
+	.return-score br,
+	.next br {
+		display: none;
 	}
 }
