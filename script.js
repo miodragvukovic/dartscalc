@@ -149,27 +149,14 @@ Array.from(document.getElementsByClassName('return-score')).forEach(function(el)
 	 	}
 	 })
 })
-if ( window.innerWidth < 769 ) {
 Array.from(document.getElementsByClassName('next')).forEach(function(el, index) {
-  el.addEventListener("click", function(){
-  	var thaIndex = index + 1
-  	var left = "-" + thaIndex + "00%"
-  	if ( thaIndex == document.getElementsByClassName('next').length ) {
-  		document.querySelector('.container').style.left = "0"
-  	} else {
-  		document.querySelector('.container').style.left = left
-  	}
-  })
-})	
-	// document.querySelector('body').classList.add('swiper-container')
-	// document.querySelector('.container').classList.add('swiper-wrapper')
-	// Array.from(document.getElementsByClassName('player')).forEach( el => el.classList.add('swiper-slide') )
-
-	// var mySwiper = new Swiper ('.swiper-container', {
-	// 	loop: true,
- //    	navigation: {
- //    		nextEl: '.next',
- //    		prevEl: '.swiper-button-prev',
- //    	},
- //  });
-}
+	el.addEventListener("click", function(){
+		var thaIndex = index + 1
+		var left = "-" + thaIndex + "00%"
+		if ( thaIndex == document.getElementsByClassName('next').length ) {
+		  	document.querySelector('.container').style.left = "0"
+		} else {
+		  	document.querySelector('.container').style.left = left
+		}
+	})
+})
