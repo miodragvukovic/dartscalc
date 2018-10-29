@@ -1,0 +1,245 @@
+* {
+	box-sizing: border-box;	
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	color: #ccff00;
+	font-family: 'Lato', sans-serif;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	position: relative;
+	background: linear-gradient(to bottom, rgba(76,76,76,1) 0%,rgba(17,17,17,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 33%,rgba(102,102,102,1) 33%,rgba(71,71,71,1) 49%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%,rgba(19,19,19,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 );
+}
+.player-setup,
+.game {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	font-size: 2.6em;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 3;
+	background: linear-gradient(to bottom, rgba(76,76,76,1) 0%,rgba(17,17,17,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 33%,rgba(102,102,102,1) 33%,rgba(71,71,71,1) 49%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%,rgba(19,19,19,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 );
+	border-radius: 25px;
+	border: 1px solid black;
+	color: black;
+}
+.player-setup {
+	height: 300px;
+	width: 100%;
+	max-width: 500px;
+}
+.player-setup input,
+.game input {
+	height: 14px;
+	widows: 14px;
+	margin-left: 15px;
+}
+.game {
+	height: 200px;
+	width: 100%;
+	max-width: 350px;
+	display: none;
+}
+.game strong,
+.player-setup strong {
+	margin-bottom: 15px;
+}
+.game-ok,
+.player-ok {
+	width: 90px;
+	height: 35px;
+	color: black;
+	background: #ccff00;
+	margin: 0 auto;
+	margin-top: 15px;
+	border-radius: 35px;
+	border: none;
+	font-size: .7em;
+}
+.container {
+	margin: 0 auto;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	cursor: pointer;
+	opacity: 0;
+	transition: .5s;
+	background: linear-gradient(to bottom, rgba(76,76,76,1) 0%,rgba(17,17,17,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 33%,rgba(102,102,102,1) 33%,rgba(71,71,71,1) 49%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%,rgba(19,19,19,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 );
+}
+.player {
+	position: relative;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+.cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: .6;
+	transition: .6s;
+	border-right: 1px solid black;
+	z-index: 2;
+}
+.player-active .cover {
+	opacity: 0;
+	z-index: -1;
+}
+.score {
+	height: 10vh;
+}
+.buttons {
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+}
+.numbers {
+	display: flex;
+	flex-wrap: wrap;
+	height: 60%;
+}
+.buttons span {
+	display: flex;
+	width: 33.33333%;
+	justify-content: center;
+	align-items: center;
+	font-size: 2.8em;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+}
+.score-number {
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	font-size: 4.8em;
+	height: 100%;
+	padding-right: 15px;
+}
+.player .score-number:before {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	font-size: .43em;
+}
+.player:nth-child(1) .score-number:before {
+	content: "Player 1";
+}
+.player:nth-child(2) .score-number:before {
+	content: "Player 2";
+}
+.player:nth-child(3) .score-number:before {
+	content: "Player 3";
+}
+.player:nth-child(4) .score-number:before {
+	content: "Player 4";
+}
+.numbers span:active,
+.board p:active {
+	background: #ccff00;
+	color: black;
+	transition: .1s ease-in;
+}
+.multiplier {
+	height: 10%;
+	width: 100%;
+	display: flex;
+}
+
+.multiplier span {
+	font-size: 2em;
+}
+.active {
+	background: #ccff00;
+	color: black;
+	transition: .3s ease-in;
+}
+.board {
+	height: 30%;
+	word-wrap: break-word;
+	overflow: hidden;
+}
+.return-score {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 35%;
+	border-bottom: 1px solid black;
+	font-size: 2.2em;
+}
+.scores {
+	height: 65%;
+}
+span {
+	text-align: center;
+}
+.last-results {
+	width: 100%;
+	height: 33%;
+	text-align: center;
+	float: left;
+	font-size: 3.2em;
+}
+.next {
+	position: relative;
+	border: 1px solid transparent;
+}
+.next.grey {
+	border-color: #ccff00;
+}
+.next span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	opacity: 0;
+	height: 100%;
+	width: 100%;
+}
+.grey span {
+	background-color: #ccc;
+	animation: grey-anim 10s linear infinite;
+}
+@keyframes grey-anim {
+	0% { opacity: .5;}
+	50% { opacity: 0;}
+	100% { opacity: .5;}
+}
+
+@media (max-width: 1024px) {
+	html {
+		font-size: 50%;
+	}
+}
+@media (max-width: 769px) {
+	html {
+		font-size: 62.5%;
+	}
+	body {
+		overflow: hidden;
+		height: 100vh;
+	}
+	.container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 400%;
+		overflow: hidden;
+	}
+	.player {
+		width: 25%;
+	}
+}
