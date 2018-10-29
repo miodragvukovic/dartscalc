@@ -250,3 +250,25 @@ span {
 		line-height: 1.2em;
 	}
 }
+@media (max-height: 500px) {
+	html {
+		font-size: 50%;
+	}
+	.buttons span {
+		width: 25%;
+	}
+	.numbers {
+		position: relative;
+	}
+	.score-value:last-child {
+		position: absolute;
+		left: 0;
+		bottom: -9vh;
+	}
+	.multiplier {
+		justify-content: flex-end;
+	}
+	.return-score {
+		height: 45%;
+	}
+}
