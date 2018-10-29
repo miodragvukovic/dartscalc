@@ -237,7 +237,6 @@ span {
 		height: 100vh;
 	}
 	.container {
-		overflow: hidden;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -247,7 +246,8 @@ span {
 	.player {
 		width: 25%;
 	}
-	.return-score {
-		line-height: 2em;
+	.return-score,
+	.next {
+		line-height: 1.2em;
 	}
 }
