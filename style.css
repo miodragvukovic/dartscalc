@@ -222,9 +222,14 @@ span {
 	100% { opacity: .5;}
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 	html {
 		font-size: 50%;
+	}
+	.return-score {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
 	}
 }
 @media (max-width: 769px) {
