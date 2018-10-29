@@ -262,6 +262,9 @@ span {
 	.buttons span {
 		width: 25%;
 	}
+	.grey span {
+		width: 100%;
+	}
 	.numbers {
 		position: relative;
 	}
@@ -276,5 +279,10 @@ span {
 	.return-score br,
 	.next br {
 		display: none;
+	}
+	.last-results {
+		width: 33.3333%;
+		height: 100%;
+		padding-top: 10px;
 	}
 }
