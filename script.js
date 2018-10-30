@@ -92,8 +92,12 @@ for ( var i = 0; i < document.getElementsByClassName('player').length; i++ ) {
 		}
 		this.nextElementSibling.nextElementSibling.children[1].insertAdjacentHTML('afterbegin', "<div data-value='"+ res +"' class='last-results'>"+ res +"</div>")
 		this.nextElementSibling.nextElementSibling.classList.add('has-scores')
-		if ( sc.getAttribute("data-value") <= 40 ) {
-			this.nextElementSibling.children[0].style.color = "red"
+		// if ( sc.getAttribute("data-value") <= 40 ) {
+		// 	this.nextElementSibling.children[0].style.color = "red"
+		// 	this.nextElementSibling.children[0].style.border = "1px solid red"
+		// }
+		if ( sc.getAttribute("data-value") == 0 ) {
+			alert("You won!")
 		}
 	})
 }
