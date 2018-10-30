@@ -52,35 +52,49 @@ for ( var i = 0; i < document.getElementsByClassName('player').length; i++ ) {
 	document.getElementsByClassName('numbers')[i].insertAdjacentHTML('beforeend', "<span data-value='25' class='score-value'>25</span>")
 	document.getElementsByClassName('numbers')[i].addEventListener('click', function(e) {
 		var sc = this.parentElement.previousElementSibling.children[0]
-		var scoreOld =  sc.getAttribute("data-value")
 		var hits = e.target.getAttribute("data-value")
 		var score =  sc.getAttribute("data-value")
 		clicks = clicks+1
 		if ( clicks == 3 ) {
 			this.nextElementSibling.children[2].classList.add('grey')
 		}
-		if ( this.classList.contains('double') ) {
-		  	sc.setAttribute("data-value", score - hits*2)
-			sc.innerHTML = score - hits*2
-		}
-		if ( this.classList.contains('tripple') ) {
-			if ( hits == 25 ) {
-				return false
+		if ( sc.getAttribute("data-value") > 0 ) {
+			if ( this.classList.contains('double') ) {
+			  	sc.setAttribute("data-value", score - hits*2)
+				sc.innerHTML = score - hits*2
 			}
-		  	sc.setAttribute("data-value", score - hits*3)
-			sc.innerHTML = score - hits*3
+			if ( this.classList.contains('tripple') ) {
+				if ( hits == 25 ) {
+					return false
+				} else {
+			  	sc.setAttribute("data-value", score - hits*3)
+				sc.innerHTML = score - hits*3
+				}
+			}
+			if ( !this.classList.contains('double') & !this.classList.contains('tripple') )  {
+				sc.setAttribute("data-value", score - hits)
+				sc.innerHTML = score - hits
+			}
+		} else {
+			return false
 		}
-		if ( !this.classList.contains('double') & !this.classList.contains('tripple') )  {
-			sc.setAttribute("data-value", score - hits)
-			sc.innerHTML = score - hits
+		if ( sc.getAttribute("data-value") < 0 ) {
+			sc.setAttribute("data-value", score)
+			sc.innerHTML = score
 		}
-			this.classList.remove('double')
-			Array.from(document.getElementsByClassName('x2')).forEach( el => el.classList.remove('active') )
-			this.classList.remove('tripple')
-			Array.from(document.getElementsByClassName('x3')).forEach( el => el.classList.remove('active') )
-			var res = scoreOld - sc.getAttribute("data-value")
-			this.nextElementSibling.nextElementSibling.children[1].insertAdjacentHTML('afterbegin', "<div data-value='"+ res +"' class='last-results'>"+ res +"</div>")
-			this.nextElementSibling.nextElementSibling.classList.add('has-scores')
+		this.classList.remove('double')
+		Array.from(document.getElementsByClassName('x2')).forEach( el => el.classList.remove('active') )
+		this.classList.remove('tripple')
+		Array.from(document.getElementsByClassName('x3')).forEach( el => el.classList.remove('active') )
+		var res = score - sc.getAttribute("data-value")
+		if ( res == 0 ) {
+			return false
+		}
+		this.nextElementSibling.nextElementSibling.children[1].insertAdjacentHTML('afterbegin', "<div data-value='"+ res +"' class='last-results'>"+ res +"</div>")
+		this.nextElementSibling.nextElementSibling.classList.add('has-scores')
+		if ( sc.getAttribute("data-value") <= 40 ) {
+			this.nextElementSibling.children[0].style.color = "red"
+		}
 	})
 }
 Array.from(document.getElementsByClassName('x2')).forEach(function(el) {
