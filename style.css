@@ -104,6 +104,17 @@ body {
 }
 .score {
 	height: 10vh;
+	position: relative;
+}
+.victories {
+	display: none;
+	position: absolute;
+	top: 40px;
+	padding-left: 15px;
+	font-size: 1.4em;
+}
+.victories em {
+	padding-left: 5px;
 }
 .buttons {
 	height: 90vh;

@@ -39,6 +39,7 @@ document.querySelector('.game-ok').addEventListener('click', function(){
 		if ( gameValue === undefined ) {
 			document.getElementsByClassName('score-number')[i].setAttribute("data-value", checkedValue)
 			document.getElementsByClassName('score-number')[i].innerHTML = checkedValue
+			gameValue = checkedValue
 		}
 	}
 	document.querySelector('.game').style.display = "none"
@@ -97,8 +98,15 @@ for ( var i = 0; i < document.getElementsByClassName('player').length; i++ ) {
 		// 	this.nextElementSibling.children[0].style.border = "1px solid red"
 		// }
 		if ( sc.getAttribute("data-value") == 0 ) {
-			alert("You won!")
+			this.parentElement.previousElementSibling.children[1].style.display = "block"
+			var currentScore = Number(this.parentElement.previousElementSibling.children[1].children[0].innerHTML)
+			this.parentElement.previousElementSibling.children[1].children[0].innerHTML = currentScore + 1
+			Array.from(document.getElementsByClassName('score-number')).forEach(function(el) {
+				el.setAttribute('data-value', gameValue)
+				el.innerHTML = gameValue
+			})
 		}
+
 	})
 }
 Array.from(document.getElementsByClassName('x2')).forEach(function(el) {
